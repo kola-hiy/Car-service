@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>TWIN TORQUE GARAGE</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #003366;
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    nav ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 10px 0 0 0;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #ffcc00;
+    }
+
+    section {
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    #home {
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    #contact {
+      background-color: #eeeeee;
+      color: #111;
+    }
+
+    h1, h2, h3 {
+      margin-bottom: 10px;
+    }
+
+    p {
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .location-link {
+      font-size: 20px;
+      color: #d62828;
+      text-decoration: none;
+    }
+
+    .location-link i {
+      margin-right: 8px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #f5f5f5;
+      color: #333;
+    }
+
+    footer a {
+      color: #003366;
+      margin: 0 10px;
+      font-size: 20px;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: #ff6600;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header id="main-header">
+    <h1>TWIN TORQUE GARAGE</h1>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="service.html">Services</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="home">
+    <h2>We care about your car</h2>
+    <p>Is your car broken down? We can help! Tires, engines, air conditioning – we do it all!</p>
+    <img src="kereta.jpg" alt="Workshop with cars being serviced">
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>📞 Call or SMS us: 
+      <strong><a href="tel:+60143942342" style="color: #003366; text-decoration: underline;">+6014-3942342</a></strong>
+    </p>
+    <p>📍 Visit us at: <strong>Persiaran Zamrud, Kulim</strong></p>
+
+    <h3>Our Workshop Location</h3>
+    <a class="location-link" href="https://www.google.com/maps?q=Workshop+Izam+Garage+Kulim" target="_blank">
+      <i class="fas fa-map-marker-alt"></i> See Location on Google Maps
+    </a>
+  </section>
+
+  <footer>
+    &copy; 2025 TWIN TORQUE GARAGE. All rights reserved.<br>
+    <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>
+    <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+  </footer>
+
+  <!-- Smooth scroll -->
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>

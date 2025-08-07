@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Twin Torque Garage - Services</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: maroon;
+      color: white;
+    }
+
+    header {
+      background-color: #003366;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 10px 0 0;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      text-shadow: 1px 1px 2px #000;
+    }
+
+    section#service {
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
+    }
+
+    .service-card {
+      background-color: #fff;
+      color: black;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease;
+    }
+
+    .service-card:hover {
+      transform: scale(1.02);
+    }
+
+    .service-card img {
+      width: 100%;
+      border-radius: 5px;
+    }
+
+    table {
+      width: 100%;
+      margin-top: 15px;
+      border-collapse: collapse;
+    }
+
+    table th, table td {
+      border: 1px solid #ccc;
+      padding: 8px;
+      text-align: center;
+    }
+
+    .book-btn {
+      margin-top: 10px;
+      padding: 10px 15px;
+      background-color: #003366;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .book-btn:hover {
+      background-color: #005599;
+    }
+
+    /* Modal styling */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+
+    .modal-content {
+      background-color: white;
+      margin: 10% auto;
+      padding: 20px;
+      width: 90%;
+      max-width: 400px;
+      border-radius: 8px;
+      color: black;
+    }
+
+    @media (max-width: 480px) {
+      .modal-content {
+        margin-top: 30%;
+      }
+    }
+
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    .close:hover {
+      color: black;
+    }
+
+    input[type="text"], input[type="date"] {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    button[type="submit"] {
+      padding: 10px 15px;
+      background-color: #003366;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #005599;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>TWIN TORQUE GARAGE</h1>
+  <nav>
+    <ul>
+      <li><a href="index.html#Home">Home</a></li>
+      <li><a href="#service">Services</a></li>
+      <li><a href="index.html#ContactUs">Contact Us</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section id="service">
+  <h1>Our Services</h1>
+  <div class="grid-container">
+
+    <!-- Aircond Service -->
+    <div class="service-card">
+      <h2>Aircond Service</h2>
+      <img src="istockphoto-1318616314-612x612.jpg" alt="Technician servicing air conditioning">
+      <p>Keep your car cool with reliable aircond repair and servicing.</p>
+      <table>
+        <tr><th>Service type</th><th>Price range</th></tr>
+        <tr><td>Gas top-up / minor servicing</td><td>RM 30 - 80</td></tr>
+        <tr><td>Basic flushing + oil + gas</td><td>RM 99 – 180</td></tr>
+        <tr><td>Comprehensive flushing</td><td>RM 120 – 280 / up to RM 650</td></tr>
+        <tr><td>Major repairs</td><td>RM 350 – 2500 per part</td></tr>
+      </table>
+      <button class="book-btn" onclick="openModal('modal1')">Book Now</button>
+    </div>
+
+    <!-- Tyre Service -->
+    <div class="service-card">
+      <h2>Tyre Service</h2>
+      <img src="tayar.jpg" alt="Tyre technician working on a car">
+      <p>Ensure safety and performance with tyre repairs, rotation, and balancing.</p>
+      <table>
+        <tr><th>Service type</th><th>Price range</th></tr>
+        <tr><td>Tyre Rotation</td><td>RM (per tyre)</td></tr>
+        <tr><td>Tyre balancing</td><td>RM5</td></tr>
+        <tr><td>Wheel alignment (4-wheel)</td><td>RM25</td></tr>
+        <tr><td>Puncture repair</td><td>RM5</td></tr>
+        <tr><td>Tyre replacement</td><td>RM190++</td></tr>
+      </table>
+      <button class="book-btn" onclick="openModal('modal2')">Book Now</button>
+    </div>
+
+    <!-- Engine Service -->
+    <div class="service-card">
+      <h2>Engine Service</h2>
+      <img src="engine-repairs.jpg" alt="Engine mechanic doing repairs">
+      <p>Keep your engine running smoothly with expert maintenance and repair.</p>
+      <table>
+        <tr><th>Service type</th><th>Price range</th></tr>
+        <tr><td>Minor Service (oil + filter)</td><td>RM 120 – RM 250</td></tr>
+        <tr><td>Major Service (spark plug, ATF, filters)</td><td>RM 400 – RM 700</td></tr>
+        <tr><td>Engine Decarbonizing</td><td>RM 150 – RM 300</td></tr>
+        <tr><td>Top Overhaul</td><td>RM 1,200 – RM 2,500</td></tr>
+        <tr><td>Full Overhaul</td><td>RM 2,000 – RM 5,000+</td></tr>
+      </table>
+      <button class="book-btn" onclick="openModal('modal3')">Book Now</button>
+    </div>
+
+  </div>
+</section>
+
+<!-- Booking Modals -->
+<div id="modal1" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('modal1')">&times;</span>
+    <h3>Book Aircond Service</h3>
+    <form onsubmit="submitForm(event, 'modal1')">
+      <label for="name1">Your Name:</label>
+      <input type="text" id="name1" required>
+      <label for="date1">Preferred Date:</label>
+      <input type="date" id="date1" required>
+      <label for="phone1">Phone number:</label>
+      <input type="text" id="phone1" required>
+      <button type="submit">Submit Booking</button>
+    </form>
+  </div>
+</div>
+
+<div id="modal2" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('modal2')">&times;</span>
+    <h3>Book Tyre Service</h3>
+    <form onsubmit="submitForm(event, 'modal2')">
+      <label for="name2">Your Name:</label>
+      <input type="text" id="name2" required>
+      <label for="date2">Preferred Date:</label>
+      <input type="date" id="date2" required>
+      <label for="phone2">Phone number:</label>
+      <input type="text" id="phone2" required>
+      <button type="submit">Submit Booking</button>
+    </form>
+  </div>
+</div>
+
+<div id="modal3" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('modal3')">&times;</span>
+    <h3>Book Engine Service</h3>
+    <form onsubmit="submitForm(event, 'modal3')">
+      <label for="name3">Your Name:</label>
+      <input type="text" id="name3" required>
+      <label for="date3">Preferred Date:</label>
+      <input type="date" id="date3" required>
+      <label for="phone3">Phone number:</label>
+      <input type="text" id="phone3" required>
+      <button type="submit">Submit Booking</button>
+    </form>
+  </div>
+</div>
+
+<!-- Script -->
+<script>
+function openModal(id) {
+  document.getElementById(id).style.display = "block";
+}
+
+function closeModal(id) {
+  document.getElementById(id).style.display = "none";
+}
+
+function submitForm(e, modalId) {
+  e.preventDefault();
+  alert("Your booking has been submitted! We will contact you soon.");
+  closeModal(modalId);
+}
+
+window.onclick = function(event) {
+  const modals = document.querySelectorAll('.modal');
+  modals.forEach(modal => {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  });
+};
+</script>
+
+</body>
+</html>
